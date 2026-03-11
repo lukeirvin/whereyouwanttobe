@@ -288,7 +288,8 @@ section {
   display: block;
   padding-top: 56.25%;
 }
-.video-container iframe {
+.video-container iframe,
+.video-container video {
   position: absolute;
   top: 0; left: 0;
   width: 100%;
@@ -679,14 +680,16 @@ footer {
   </div>
   <div class="video-container reveal">
     <iframe 
-      src="https://www.youtube-nocookie.com/embed/3aQuvPlcB-8?rel=0&modestbranding=1" 
+      src="https://player.vimeo.com/video/1169066414?badge=0&autopause=0&player_id=0&app_id=58479" 
       title="Where You Want To Be — Proof of Concept" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
       allowfullscreen>
     </iframe>
   </div>
-  <p class="video-note reveal">Placeholder — Proof of concept currently in production<br>
-    <a href="https://www.youtube.com/watch?v=3aQuvPlcB-8" target="_blank" rel="noopener" style="color: var(--green); text-decoration: none; font-style: normal; font-size: 0.85rem;">▶ Watch on YouTube if video doesn't load</a></p>
+  <p class="video-note reveal">
+    <a href="https://vimeo.com/1169066414" target="_blank" rel="noopener" id="cta-vimeo" style="color: var(--green); text-decoration: none; font-style: normal; font-size: 0.85rem;">▶ Watch on Vimeo</a>
+    <br>Music featured for creative purposes only. All rights belong to their respective owners.
+  </p>
 </section>
 
 <div class="divider"><div class="divider-line"></div></div>
@@ -1255,13 +1258,13 @@ document.querySelector('.nav-cta').addEventListener('click', function() {
   });
 });
 
-// Track YouTube fallback link (if present)
-const ytLink = document.querySelector('.video-note a');
-if (ytLink) {
-  ytLink.addEventListener('click', function() {
+// Track Vimeo fallback link (if present)
+const vimeoLink = document.getElementById('cta-vimeo');
+if (vimeoLink) {
+  vimeoLink.addEventListener('click', function() {
     gtag('event', 'cta_click', {
       event_category: 'engagement',
-      event_label: 'youtube_fallback_link',
+      event_label: 'vimeo_proof_of_concept',
       button_location: 'video_section'
     });
   });
