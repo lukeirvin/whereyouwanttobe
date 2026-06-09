@@ -652,6 +652,7 @@ footer {
     <a href="#budget">Budget</a>
     <a href="#cast">Cast</a>
     <a href="#music">Music</a>
+    <a href="#script">Script</a>
     <a href="#contact" class="nav-cta">Invest</a>
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
       <span class="icon" id="themeIcon">☀</span>
@@ -1175,6 +1176,18 @@ footer {
 
 <div class="divider"><div class="divider-line"></div></div>
 
+<!-- SCRIPT -->
+<section id="script" style="text-align: center;">
+  <div class="reveal">
+    <span class="section-label">The Screenplay</span>
+    <h2 class="section-title">Read The Script</h2>
+    <p class="section-body" style="margin: 0 auto;">The foundation of every great film is on the page. Read the full screenplay for <em>Where You Want To Be</em> and discover the world, the characters, and the voice that make this story unique.</p>
+    <a href="Where_You_Want_To_Be_FINAL_watermarked.pdf" download class="contact-cta" id="cta-script" style="margin-top: 2rem;">Download Screenplay (PDF)</a>
+  </div>
+</section>
+
+<div class="divider"><div class="divider-line"></div></div>
+
 <!-- CONTACT -->
 <section class="contact-section" id="contact">
   <div class="reveal">
@@ -1278,6 +1291,18 @@ if (spotifyLink) {
       event_category: 'engagement',
       event_label: 'spotify_playlist',
       button_location: 'music_section'
+    });
+  });
+}
+
+// Track script download
+const scriptLink = document.getElementById('cta-script');
+if (scriptLink) {
+  scriptLink.addEventListener('click', function() {
+    gtag('event', 'cta_click', {
+      event_category: 'engagement',
+      event_label: 'script_download',
+      button_location: 'script_section'
     });
   });
 }
